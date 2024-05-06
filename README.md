@@ -48,3 +48,13 @@ modal serve modal/phoneme_modal_server.py
 
 Once your phoneme recognition model is running update the MODAL_URL in the notebook. 
 For the final llm call, you would need Groq api key. The final piece of code call the llama3 70b model to get the feedback based on the recorded and reference phoneme sequences.
+
+## Key Takeaways
+
+1. Phoneme recognition accuracy matters: If the model isn't trained to handle multiple languages and accents, it's going to struggle to recognize phonemes correctly. This is crucial for accurate mispronunciation detection.
+   
+2. LLMs provide consistent feedback: When I sent word-level phonemes to the Large Language Model (LLM), the feedback was consistent and correct. But if I sent it without aligning sequences first, it was hallucinating more.
+
+3. Multimodal models simplify audio analysis: Models like Gemini 1.5 Pro can ingest audio files directly and answer questions like identifying mispronunciations, accents, or providing valuable feedback on speech. This makes audio analysis much more efficient.
+
+4. Tailor-made practice exercises: We can keep track of all the mispronunciation patterns and ask the LLM to devise a personalized practice exercise plan. This plan would be tailored to address specific areas of improvement, helping individuals focus their practice and accelerate progress.
