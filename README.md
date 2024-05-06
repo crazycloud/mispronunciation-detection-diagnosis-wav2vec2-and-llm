@@ -13,7 +13,7 @@ MDD uses advanced speech processing techniques to analyze spoken language and de
       - Lack of detail: only identifies words with low confidence scores, not specific utterances or phonemes
       - May not detect all mispronunciations, especially if confidence scores are high
 
-Approach 2: Neural Network-based Phoneme Generation
+**Approach 2: Neural Network-based Phoneme Generation**
 - Train a neural network to generate phonemes from speech input
 - Compare generated phonemes to reference phonemes for diagnosis
 **Limitations:**
@@ -27,7 +27,7 @@ Approach 2: Neural Network-based Phoneme Generation
       - Improved accuracy: fine-tuning on phoneme datasets enhances phoneme recognition capabilities
       - Robustness to speaker variability: multilingual training helps adapt to different pronunciation patterns
 
-**Our Approach**
+**Our Approach**  
 We will use pre-trained Wav2Vec2 and Espeak to extract phoneme sequences from recorded speech and reference text, respectively. The extracted sequences are then aligned using the Needleman-Wunsch algorithm, and a Large Language Model (LLM) is used to generate feedback on mispronunciations.
 
 
