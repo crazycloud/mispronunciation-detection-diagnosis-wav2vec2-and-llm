@@ -30,9 +30,21 @@ MDD uses advanced speech processing techniques to analyze spoken language and de
 **Our Approach**  
 We will use pre-trained Wav2Vec2 and Espeak to extract phoneme sequences from recorded speech and reference text, respectively. The extracted sequences are then aligned using the Needleman-Wunsch algorithm, and a Large Language Model (LLM) is used to generate feedback on mispronunciations.
 
+![Mispronunciation Detection - How it Works](assets/mispronunciation-detection-how-it-works.png)
 
 **Key Features:**  
 - Utilizes Wav2Vec2 for speech-to-phoneme conversion
 - Employs Espeak for reference phoneme sequence generation
 - Implements Needleman-Wunsch algorithm for alignment
 - Integrates LLM for personalized feedback
+
+## How to run
+
+Install modal labs python client
+Configure secrets in the modal console. 
+```
+modal serve modal/phoneme_modal_server.py
+```
+
+Once your phoneme recognition model is running update the MODAL_URL in the notebook. 
+For the final llm call, you would need Groq api key. The final piece of code call the llama3 70b model to get the feedback based on the recorded and reference phoneme sequences.
